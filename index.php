@@ -1,8 +1,8 @@
 <?php
 require_once('Config/db.php');
-$query = "select * from machine_data";
-$results = mysqli_query($conn,$query);
-
+//$query = "select * from machine_data";
+//$results = mysqli_query($conn,$query);
+//include 'Config/db.php';
 ?>
 
 <!DOCTYPE html>
@@ -13,21 +13,31 @@ $results = mysqli_query($conn,$query);
     <meta name="Chen0273" content="width=device-width, initial-scale=1.0" />
 
 </head>   
-    <div class="containers my-5">
+    <div class="containers">
      <form method="post">
-        <input type="datetime-local" placeholder="search data"
-        name ="search">
+        <input type="date" name ="search" value="<?php echo $_POST['search']; ?>">
         <button class="btn" name="submit">Search</button>
 	</form>
     <div class="container">
+        <table class="table">
+
         <?php
 
-        if(isset($_POST['submit'])){
+        if(isset($_POST['search'])){
             $search=$_POST['search'];
-            $sql="select * from 'machine_data' where timestamp='$search' ";
-            $result=mysqli_query($con,$sql);
+            $searchstart=$search.'T00:00'; 
+            $searchend=$search.'T23:59';
             
-            if ($result){
+            $unixtimeStart= strtotime($searchstart);
+            $unixtimeEnd= strtotime($searchend); //convert time to unix timestamp to be able to use for search which requires seconds.
+            $fsearchStart = date('Y-m-d H:i:s', $unixtimeStart);
+            $fsearchEnd = date('Y-m-d H:i:s', $unixtimeEnd);
+           // echo $fsearch;
+            $sql="select * from machine_data where timestamp>='$fsearchStart' and timestamp <='$fsearchEnd' ";
+           // echo $sql; // testing the data retrieved
+            //$results=mysqli_query($conn,$sql);
+            
+            /*if ($result){
             if(mysqli_num_rows($result)>0){
                 echo '<thead>
                 <tr>
@@ -38,29 +48,28 @@ $results = mysqli_query($conn,$query);
                 </thead>
                 ';
                 
-                $row=mysqli_fetch_assoc($result);
+                while($row=mysqli_fetch_assoc($result)){
                 echo '<tbody>
                 <tr>
-                <td>'.$row['id'].'</td>
+                <td>'.$row['maintenance_log'].'</td>
                 <td>'.$row['timestamp'].'</td>
                 <td>'.$row['machine_name'].'</td>
                 </tr>
                 </tbody>';
-
+            }
             }else {
-                echo '<h2 class=text> No data found</h2>';}
+                echo '<h2 class=text> No data found</h2>';}*/
             
             
             //$num=mysqli_num_rows($results);
-            //echo $num;
-
-            
+            //echo $num
 
             }
+            else {
+                $sql = "select * from machine_data";
+            }
 
-        }
-
-
+            $results=mysqli_query($conn,$sql);
 
 
 
@@ -85,11 +94,11 @@ $results = mysqli_query($conn,$query);
         </div>
     <div class="card-body">
 
-   
+<?php if(mysqli_num_rows($results)>0){ ?>   
 
-<tr class="bg-dark text-white">
+
     <table class="table table-bordered">
-
+    <tr class="bg-dark text-white">
     <td> Timestamp </td>
     <td> machine_name </td>
     <td> Temperature </td>
@@ -130,5 +139,8 @@ $results = mysqli_query($conn,$query);
 
     ?>
 </table>
+<?php } else { ?>  
+    <h2>No data found</h2>
+<?php } ?>
 </body>
 </html>
