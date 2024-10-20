@@ -1,0 +1,36 @@
+Commit History For All Branches:
+Jarrah is Egli0022
+Xavier is EndlessWander96
+Colin is ccshi332
+Tom is Tom Fox
+
+13ca5a9 - Egli0022, 14 minutes ago : Add files via upload
+04f3501 - Egli0022, 33 hours ago : Add files via upload
+dec4012 - EndlessWander96, 2 days ago : Add files via upload
+e1d0001 - Tom Fox, 2 days ago : Hopefully not corrupted!
+068966e - Tom Fox, 3 days ago : Fixed some bugs
+834df39 - Tom Fox, 3 days ago : Revert "Fixed some bugs"
+a9da614 - Tom Fox, 3 days ago : Fixed some bugs
+cba2a6f - Tom Fox, 3 days ago : Cleaned up the DB and adjusted operator code
+a334327 - Tom Fox, 3 days ago : Dashboard Stuff for Thursday
+73326bd - ccshi332, 4 days ago : Add files via upload
+0bc6d25 - ccshi332, 4 days ago : Add files via upload
+223af11 - ccshi332, 4 days ago : Add files via upload
+672149d - ccshi332, 5 days ago : Add files via upload
+8195272 - Tom Fox, 5 days ago : A near-complete version of my files
+e5b407b - ccshi332, 5 days ago : Add files via upload
+5fc0b19 - ccshi332, 6 days ago : Add files via upload
+38c6112 - Tom Fox, 13 days ago : Filled out the administrator section
+3d6afa4 - EndlessWander96, 2 weeks ago : Add files via upload
+45d1779 - Tom Fox, 3 weeks ago : Adjusted manager stuff
+c499359 - Tom Fox, 4 weeks ago : Added basic login page functionality and updated DB tables.
+ef08c79 - Tom Fox, 5 weeks ago : Same as 1.2 but including sql file
+574c293 - Tom Fox, 5 weeks ago : Revert "Same code as last one, just added the DB for you guys"
+c3c968b - Tom Fox, 5 weeks ago : Same code as last one, just added the DB for you guys
+b032fc8 - Tom Fox, 5 weeks ago : Basic functionalty for my two parts done.
+e1ab3b3 - Tom Fox, 5 weeks ago : Fleshing out the manager functionality a bit
+70054d7 - Tom Fox, 5 weeks ago : Very rough start on some manager stuff
+c0b696d - Tom Fox, 5 weeks ago : Create README.md
+ed5ecef - Tom Fox, 6 weeks ago : Revert "Create dev"
+85054eb - Tom Fox, 6 weeks ago : Create README.md
+5be9a79 - Tom Fox, 6 weeks ago : Create dev
